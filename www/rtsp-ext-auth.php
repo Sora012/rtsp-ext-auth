@@ -15,19 +15,24 @@ catch (PDOException $e)
 $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
-if (!empty($data['ip'])) {
+if (!empty($data['ip']))
+{
 	$ip = filter_var($data['ip'], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
 }
-if (!empty($data['user'])) {
+if (!empty($data['user']))
+{
 	$user = filter_var($data['user'], FILTER_SANITIZE_STRING);
 }
-if (!empty($data['password'])) {
+if (!empty($data['password']))
+{
 	$password = filter_var($data['password'], FILTER_SANITIZE_STRING);
 }
-if (!empty($data['path'])) {
+if (!empty($data['path']))
+{
 	$path = filter_var($data['path'], FILTER_SANITIZE_STRING);
 }
-if (!empty($data['action'])) {
+if (!empty($data['action']))
+{
 	$action = filter_var($data['action'], FILTER_SANITIZE_STRING);
 }
 
